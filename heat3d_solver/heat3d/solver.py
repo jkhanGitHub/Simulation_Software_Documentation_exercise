@@ -110,10 +110,14 @@ def _laplacian_7point(T: np.ndarray, dx: float) -> np.ndarray:
 
     # Interior slice objects
     i = slice(1, -1)
+    # Fixed by me after finding the bug: defined shifted slices strictly since slice+int is invalid
+    ip1 = slice(2, None)
+    im1 = slice(0, -2)
+
     lap[i, i, i] = (
-        T[i + 1, i, i] + T[i - 1, i, i] +
-        T[i, i + 1, i] + T[i, i - 1, i] +
-        T[i, i, i + 1] + T[i, i, i - 1] -
+        T[ip1, i, i] + T[im1, i, i] +
+        T[i, ip1, i] + T[i, im1, i] +
+        T[i, i, ip1] + T[i, i, im1] -
         6.0 * T[i, i, i]
     ) / (dx ** 2)
 
