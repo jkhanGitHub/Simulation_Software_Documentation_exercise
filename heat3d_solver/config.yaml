@@ -1,0 +1,67 @@
+# ------------------------------
+# 3D Heat Equation – Default Run
+# ------------------------------
+
+domain:
+  # Physical size of the cubic domain [m]
+  Lx: 1.0
+  Ly: 1.0
+  Lz: 1.0
+
+grid:
+  # Number of nodes in each direction (including boundaries)
+  Nx: 30
+  Ny: 30
+  Nz: 30
+
+material:
+  # Thermal diffusivity α (m²/s)
+  alpha: 1.0
+
+time:
+  # Total simulation time (s)
+  t_final: 0.1
+  # Time step (s). If omitted the program will compute the max stable dt.
+  dt:  # leave empty → computed from stability condition
+  # Write a snapshot every N steps (0 = only final field)
+  output_every: 10
+
+boundary:
+  # Dirichlet = fixed temperature, Neumann = insulated
+  # Choose "Dirichlet" or "Neumann" for each face.
+  # Values are the temperature for Dirichlet faces (ignored for Neumann).
+  x_min:
+    type: Dirichlet
+    value: 0.0
+  x_max:
+    type: Dirichlet
+    value: 0.0
+  y_min:
+    type: Dirichlet
+    value: 0.0
+  y_max:
+    type: Dirichlet
+    value: 0.0
+  z_min:
+    type: Dirichlet
+    value: 0.0
+  z_max:
+    type: Dirichlet
+    value: 0.0
+
+initial_condition:
+  # Gaussian hotspot
+  type: Gaussian
+  amplitude: 1.0
+  center: [0.5, 0.5, 0.5]   # relative coordinates (0‑1)
+  sigma: 0.1                # width of the Gaussian (in physical units)
+
+output:
+  # Folder where results are stored (will be created if missing)
+  folder: results
+  # File name for the final temperature field
+  final_field: temperature_final.npy
+  # Prefix for intermediate snapshots (if output_every > 0)
+  snapshot_prefix: snapshot_   # becomes snapshot_000.npy, snapshot_001.npy, …
+  # Whether to create a quick slice plot of the final field (true/false)
+  plot_slice: true

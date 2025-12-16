@@ -3,7 +3,7 @@ This repository holds solved tasks given in the documentation exercise of the si
 
  I acknowledge the use of RAI (https://rai.uni-stuttgart.de/) to implement the entirety of this code.
 
- #System prompt:
+ # System prompt:
 
 You are a expert on Simulation Software, knowing everything about heat equation in particular. When receiving a prompt from a user you never hallucinate information that is unavailable to you, that might be needed for completing the task the user asks you to perform, instead you ask the user about the information that you need, but has not been provided by the user yet, to complete the task of the user the way he intended it to be done. This can be information needed to write code, question of the format or architecture of a software or programming language. Before generating code you need to have all information needed by the user collected. After you have everything collected you make a plan on how the software can be implemented in form of a software architecture and a Task list to implement the software correctly. After generating these always ask the user if these are align with the intention of the user. Only if he accepts these start generating the code accordingly to the architecture and Task List you provided. After each output you give try to give the user a suggestion on what you can do to proceed and ask him if he wants you to do it.
 
@@ -11,10 +11,10 @@ About the code written: Always give a Formal overview what the purpose of the fi
 Provide code documentation for comprehension and test cases to confirm the correctness of the code.
 
 
-#User Prompt:
+# User Prompt:
 Hi
 
-#GPT5.1:
+# GPT5.1:
 Hello! 👋  
 
 Hello! 👋  
@@ -52,7 +52,7 @@ Once I have this information I can draft a software architecture, break it down 
 
 Let me know the details you have in mind!
 
-#User Prompt:
+# User Prompt:
 1. implement a new program that solves a 3D heat equation
 2. Use the finite difference method
 3. implement in python only, you may use numpy/scipy and matplotlib for the implementation, if you want to use others aswell ask first.
@@ -61,7 +61,7 @@ Let me know the details you have in mind!
 6. no additional features the program will be kept basic
 
 
-#GPT5.1:
+# GPT5.1:
 Below is a short list of details that I still need before I can produce a complete, ready‑to‑run program.
 
 | # | What I need to know | Why it matters |
@@ -88,11 +88,11 @@ Once you approve, I’ll generate the full, documented Python code, the config�
 **Would you like to provide the missing parameters, or should I pick reasonable defaults for a demonstrative example (e.g., unit cube, `Nx=Ny=Nz=20`, `α=1.0`, Dirichlet zero on all faces, Gaussian hotspot as initial condition, explicit scheme, output final field to `results.npy`)?**
 
 
-#User Prompt:
+# User Prompt:
 pick reasonable defaults for a demonstrative example and store them in the config file
 
 
-#GPT5.1:
+# GPT5.1:
 Below is a **complete plan** for the 3‑D heat‑equation solver you asked for.  
 All missing parameters have been filled with sensible defaults (see the *config.yaml* template).  
 
@@ -256,10 +256,10 @@ output:
 Feel free to tell me any additional preferences before I start coding!
 
 
-#User Prompt: 
+# User Prompt: 
 I approve the plan
 
-#GPT5.1:
+# GPT5.1:
 Below is the complete, ready‑to‑run implementation of the 3‑D heat‑equation solver described in the plan.  
 The project layout is:
 
@@ -1196,10 +1196,10 @@ Let me know if you would like:
 
 I'm happy to assist further!
 
-#User Prompt:
+# User Prompt:
 2. provide a short demonstration script
 
-#GPT5.1:
+# GPT5.1:
 Below is a **stand‑alone demonstration script** called **`demo.py`**.  
 It shows how to
 
@@ -1535,10 +1535,10 @@ print(T.min(), T.max())
 
 Feel free to ask for any of the above extensions, or let me know if you need a different visualisation style!
 
-#User Prompt:
+# User Prompt:
 Create a Documentation File that holds all information about the program and how it works
 
-#GPT5.1:
+# GPT5.1:
 # **Documentation**
 **3‑D Heat‑Equation Solver (explicit finite‑difference)**  
 *Version 1.0 – 2025‑12‑16*  
